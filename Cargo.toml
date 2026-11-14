@@ -1,0 +1,27 @@
+[package]
+name = "webenum"
+version = "0.1.0"
+edition = "2021"
+authors = ["Uthum Nalinda <uthumnalinda@gmail.com>"]
+description = "A high-performance graphical URL enumeration and directory discovery security tool."
+license = "MIT"
+readme = "README.md"
+
+[dependencies]
+eframe = "0.28"
+egui = "0.28"
+tokio = { version = "1.38", features = ["full"] }
+reqwest = { version = "0.12", features = ["rustls-tls"] }
+serde = { version = "1.0", features = ["derive"] }
+rfd = "0.14"
+
+[package.metadata.deb]
+maintainer = "Uthum Nalinda <uthumnalinda@gmail.com>"
+copyright = "2026, Uthum Nalinda"
+extended-description = "A graphical URL enumeration tool built in Rust."
+section = "net"
+priority = "optional"
+assets = [
+    ["target/release/webenum", "usr/bin/", "755"],
+    ["README.md", "usr/share/doc/webenum/README", "644"],
+]
