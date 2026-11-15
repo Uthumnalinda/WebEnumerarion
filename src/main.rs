@@ -11,10 +11,10 @@ fn main() -> Result<(), eframe::Error> {
             .with_title("WebEnum - Categorized URL Enumeration Scanner"),
         ..Default::default()
     };
-
+    
     eframe::run_native(
         "WebEnum GUI",
         options,
-        Box::new(|_cc| Box::new(WebEnumApp::default())),
+        Box::new(|_cc| Ok(Box::new(WebEnumApp::default()))),
     )
 }
